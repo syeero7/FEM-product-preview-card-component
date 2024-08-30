@@ -1,0 +1,134 @@
+*,
+*::after,
+*::before {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --ff-fraunces: "Fraunces", serif;
+  --ff-montserrat: "Montserrat", system-ui;
+
+  --fs-large: calc(2em + 0.5vw);
+  --fs-medium: 1rem;
+
+  --cream: hsl(30, 38%, 92%);
+  --dark-cyan: hsl(158, 36%, 37%);
+  --dark-grayish-blue: hsl(228, 12%, 48%);
+  --very-dark-blue: hsl(212, 21%, 14%);
+  --White: hsl(0, 0%, 100%);
+}
+
+img {
+  display: block;
+}
+
+body {
+  align-items: center;
+  background-color: var(--cream);
+  display: flex;
+  flex-direction: column;
+  font-family: var(--ff-montserrat);
+  font-size: 1rem;
+  font-weight: 500;
+  height: 100vh;
+  justify-content: center;
+  line-height: 1.5;
+}
+
+article {
+  background-color: var(--White);
+  border-radius: 10px;
+  color: var(--dark-grayish-blue);
+  display: grid;
+  height: auto;
+  justify-items: center;
+  margin-top: 2rem;
+  width: clamp(350px, 90%, 700px);
+}
+
+article > div {
+  display: flex;
+  flex-direction: column;
+  gap: 2.5vh;
+  padding: 2.5vh;
+  width: 350px;
+}
+
+article > picture > img {
+  width: max(350px, 100%);
+  height: 100%;
+  border-radius: 10px 10px 0 0;
+}
+
+article > div > p:first-of-type {
+  text-transform: uppercase;
+  letter-spacing: 0.4rem;
+}
+
+article > div > h1 {
+  color: var(--very-dark-blue);
+  font-size: var(--fs-large);
+  font-family: var(--ff-fraunces);
+  line-height: 1.2;
+}
+
+article div > div {
+  display: flex;
+  align-items: center;
+  gap: 2.5vh;
+}
+
+article div > strong {
+  font-size: var(--fs-large);
+  font-family: var(--ff-fraunces);
+  color: var(--dark-cyan);
+}
+
+article button {
+  align-items: center;
+  background-color: var(--dark-cyan);
+  border-radius: 10px;
+  border: none;
+  color: var(--White);
+  display: flex;
+  font-weight: 700;
+  font: inherit;
+  gap: 2vh;
+  justify-content: center;
+  margin: 0 auto;
+  padding: 10px 0;
+  width: 90%;
+}
+
+article button > img {
+  width: 20px;
+  height: auto;
+}
+
+article button:hover,
+article button:focus {
+  cursor: pointer;
+  filter: brightness(50%);
+}
+
+.attribution {
+  margin-top: 2rem;
+  font-size: 11px;
+  text-align: center;
+}
+.attribution a {
+  color: hsl(228, 45%, 44%);
+}
+
+@media screen and (min-width: 48em) {
+  body > article {
+    grid-auto-flow: column;
+    justify-content: space-between;
+  }
+
+  article > picture > img {
+    border-radius: 10px 0 0 10px;
+  }
+}
